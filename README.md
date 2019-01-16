@@ -17,9 +17,11 @@ This repository is a volunteer project to document information related to the Gi
 
 ## Usefull links
 
-[Discord](https://discord.gg/Avj4azU) - Questions & communication
-[GiantsWD](https://www.giantswd.org/) - Patches and info related to the game
+- [Discord](https://discord.gg/Avj4azU) - Questions & communication
+- [GiantsWD](https://www.giantswd.org/) - Patches and info related to the game
 
 ## Table of contents
 
-TBD
+- **Network**
+  - Master Server
+  - Protocol
