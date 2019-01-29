@@ -17,10 +17,15 @@ The protocol consists out of multiple protocols combined together a list below:
 This is still in heavy research and will be updated in the future
 
 - SMSG_PLAYERNAMES (playerindex, playername) : 3D
-Example: 3D 00 Amazed
+
+Example: `3D 00 Amazed`
+
 
 - CMSG_CHAT_ALL (message): 35 82 C2
-Example: 85 82 C2 Hello world
+
+Example: `85 82 C2 Hello world`
+
 
 - SMSG_BLUE_MESSAGE (message): 35 80 81
-Example: 35 80 81 Amazed has connected!
+
+Example: `35 80 81 Amazed has connected!`
