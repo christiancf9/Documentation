@@ -58,3 +58,56 @@ uuid (16 bytes): game guid
 int32: unknown (filled 0)  
 int32: unknown (filled 0)  
 variable: player name  
+
+- SMSG_CONNECT_ACCEPTED : C2 00 00 00
+int32: unknown (filled 0)  
+int32: unknown (filled 0)  
+int32: unknown (filled 0)
+int32: ApplicationDescSize
+int32: ApplicationDescFlags
+int32: max player count  
+int32: current player count  
+byte: player name length  
+bytes: unknown (always 01 00 00)  
+int32: server name length  
+int32: unknown (filled 0)  
+int32: unknown (filled 0)  
+int32: unknown (filled 0)  
+int32: unknown (filled 0)  
+int32: seems to be an offset related to player name length. accepted value: 204 + player name length  
+int32: unknown  
+uuid (16 bytes): instance guid  
+uuid (16 bytes): game guid  
+loop for players as player starting with current player: (to finish)  
+    int32: player id  
+    int32: player type?  
+    int32: unknown  
+    int32: unknown  
+    int32: unknown  
+int32: playerid  
+int32: unknown  
+int32(?): unknown  
+int32: unknown  
+int32: unknown (filled 0)  
+int32: unknown  
+int32: unknown (always cc)  
+int32: player name length  
+int32: unknown (filled 0)  
+int32: unknown (filled 0)  
+int32: unknown (filled 0)  
+int32: unknown (filled 0)  
+string: player name  
+byte: map id  
+byte: game type  
+byte: game teams  
+byte: unknown  
+short: game version  
+short: unknown  
+short: points per capture  
+short: points per kill  
+short: unknown  
+short: detente time in minutes  
+int32: map checksum  
+string: map name  
+(optional): 0 padding until map name is 32 bytes long  
+string: server name  
