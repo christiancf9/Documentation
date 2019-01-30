@@ -17,9 +17,9 @@ The protocol consists out of multiple protocols combined together a list below:
 Client -> CFRAME CONNECT  
 Server -> CFRAME CONNECTED  
 Client -> CFRAME CONNECTED  
-Client -> CMSG_CONNECT  
-Server -> SMSG_CONNECT_ACCEPTED  
-Client -> CMSG_CONNECTED  
+Client -> DN_INTERNAL_MESSAGE_PLAYER_CONNECT_INFO  
+Server -> DN_SEND_CONNECT_INFO  
+Client -> DN_ACK_CONNECT_INFO  
 Server -> SMSG_BLUE_MESSAGE (player has connected)  
 Server -> SMSG_ASSIGN_PLAYERID  
 ...
@@ -40,63 +40,8 @@ Example: `85 82 C2 Hello world`
 - SMSG_BLUE_MESSAGE (message): 35 80 81  
 Example: `35 80 81 Amazed has connected!`
 
-- CMSG_CONNECT : C1 00 00 00  
-int32: unknown  
-int32: unknown  
-int32: unknown  
-int32: player name length  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-uuid (16 bytes): instance guid  
-uuid (16 bytes): game guid  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-variable: player name  
-
 - SMSG_CONNECT_ACCEPTED : C2 00 00 00
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)
-int32: ApplicationDescSize
-int32: ApplicationDescFlags
-int32: max player count  
-int32: current player count  
-byte: player name length  
-bytes: unknown (always 01 00 00)  
-int32: server name length  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-int32: seems to be an offset related to player name length. accepted value: 204 + player name length  
-int32: unknown  
-uuid (16 bytes): instance guid  
-uuid (16 bytes): game guid  
-loop for players as player starting with current player: (to finish)  
-    int32: player id  
-    int32: player type?  
-    int32: unknown  
-    int32: unknown  
-    int32: unknown  
-int32: playerid  
-int32: unknown  
-int32(?): unknown  
-int32: unknown  
-int32: unknown (filled 0)  
-int32: unknown  
-int32: unknown (always cc)  
-int32: player name length  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-int32: unknown (filled 0)  
-string: player name  
+ApplicationReservedData:  
 byte: map id  
 byte: game type  
 byte: game teams  
@@ -110,4 +55,3 @@ short: detente time in minutes
 int32: map checksum  
 string: map name  
 (optional): 0 padding until map name is 32 bytes long  
-string: server name  
