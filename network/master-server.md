@@ -7,6 +7,8 @@ The Giants master handles the listing of active Giant game servers and listens o
  1. The game clients connect to the master server.
  2. The server will sent the response below to the client.
  3. The connection between the server and client will remain open as long as the client is in the server browser.
+ 
+ NOTE: Connections MUST remain open or the client will freeze.
 
 ## Response
 
