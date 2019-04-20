@@ -2,6 +2,12 @@
 
 The Giants master handles the listing of active Giant game servers and listens on TCP port 27900.
 
+## Flow
+
+ 1. The game clients connect to the master server.
+ 2. The server will sent the response below to the client.
+ 3. The connection between the server and client will remain open as long as the client is in the server browser.
+
 ## Response
 
 The master server will output the following response as a null terminated string in ASCII format:
